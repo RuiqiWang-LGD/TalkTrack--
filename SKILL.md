@@ -11,6 +11,8 @@ Make a companion PPT the presenter can read cold. Each output page must match th
 
 The presenter may know nothing about the project. If a non-specialist reads the script word for word in a formal meeting, the wording must still sound professional, accurate, and calm.
 
+Public English product name: TalkTrack. Use TalkTrack as the only English name in user-facing copy. Keep `design-report-companion` only as the internal Codex skill ID or technical folder name when needed.
+
 ## Core Speaking Standard
 
 Every page must pass the live-speaking test: if a real person reads it aloud on stage, it should sound natural, continuous, and professionally safe. The output is spoken presentation text, not a design note, internal analysis, or AI summary.
@@ -38,6 +40,7 @@ Input:
 
 User-facing output:
 
+- By default, create the final project folder on the current user's Desktop unless the user explicitly gives another output location.
 - One folder named `{project_name}汇报`.
 - One file inside that folder named `{sequence}_{project_name}.pptx`, for example `01_室内入户空间.pptx`.
 - The current user-facing deliverable is an editable PowerPoint companion file.
@@ -255,7 +258,7 @@ Implementation, case, effect-image, and detail pages are often highly repetitive
 10. When the plan reaches scheme implementation, switch from concept language to tangible object-action-effect language.
 11. Collapse repeated pages into a shared talking point and use the flip cue to tell the presenter how quickly to move.
 12. Keep keywords short. The current template supports three keyword bullets.
-13. Prepare the page plan internally, then use `scripts/build_companion_ppt.py` to validate, render, name, and package the final PPT. Deliver only `{project_name}汇报/{sequence}_{project_name}.pptx`.
+13. Prepare the page plan internally, then use `scripts/build_companion_ppt.py` to validate, render, name, and package the final PPT. Deliver only `Desktop/{project_name}汇报/{sequence}_{project_name}.pptx` unless the user specified another output folder.
 14. Verify minimally: confirm the output PPT opens and the page count matches the source. Do not create persistent preview or sampling folders unless debugging requires it.
 
 ## Page Plan Format
@@ -281,16 +284,18 @@ Use a JSON object with `pages`. Page numbers are 1-based. Localize `status`, `ke
 The user-facing automation target is PPTX:
 
 ```text
-{project_name}汇报/01_{project_name}.pptx
+Desktop/{project_name}汇报/01_{project_name}.pptx
 ```
 
-Use the final builder for normal output. It validates the internal page plan, copies source and plan into a temporary workspace, applies the approved PPT template, verifies the generated PPT opens, checks slide count, creates the project report folder, and writes only the final PPTX into the user-facing folder.
+Use the final builder for normal output. It validates the internal page plan, copies source and plan into a temporary workspace, applies the approved PPT template, verifies the generated PPT opens, checks slide count, creates the project report folder on Desktop by default, and writes only the final PPTX into the user-facing folder. If the user explicitly gives another output folder, pass it with `--output-root`.
 
 ```powershell
-python scripts/build_companion_ppt.py --source-pdf "D:/path/source.pdf" --plan-json "D:/path/page-plan.json" --output-root "D:/path/output-root" --project-name "项目名" --sequence 01
+python scripts/build_companion_ppt.py --source-pdf "D:/path/source.pdf" --plan-json "D:/path/page-plan.json" --project-name "项目名" --sequence 01
 ```
 
-The builder calls the template-driven PPT renderer. The renderer must preserve the template's background, fonts, font sizes, colors, and text box geometry. Only replace text and source thumbnails.
+The builder calls the template-driven PPT renderer. The renderer must preserve the template's background, fonts, font sizes, colors, and layout, except for the required centering correction of the main read-aloud text box. Only replace text and source thumbnails.
+
+The renderer must keep the main read-aloud text box centered relative to the right white content block, with vertical middle anchoring. Do not allow the main text to drift toward the right edge or sit visually low inside the white block.
 
 Do not recreate the template manually in code. Do not override template fonts, font sizes, fill colors, or text weights unless the user explicitly asks to revise the template.
 

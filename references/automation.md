@@ -7,20 +7,23 @@ Use automation for deterministic packaging work. Do not use automation to replac
 Use `scripts/build_companion_ppt.py` for normal user delivery. It should:
 
 - infer or accept `project_name`;
-- create `{project_name}汇报`;
+- create `{project_name}汇报` on the current user's Desktop by default, unless the user explicitly gives another output root;
 - output `{sequence}_{project_name}.pptx`;
 - keep page-plan JSON, thumbnails, logs, and temporary copies outside the user-facing output folder;
 - validate the page-plan JSON before rendering;
 - apply `assets/shunyejiang-template.pptx`;
 - verify that the generated PPTX opens and that slide count matches the page plan;
 - require the page plan to cover every source PDF page for normal delivery;
-- preserve template background, typography, geometry, and colors.
+- preserve template background, typography, layout, and colors, except for the required centering correction of the main read-aloud text box;
+- keep the main read-aloud text box centered in the right white content panel.
 
 Standard command:
 
 ```powershell
-python scripts/build_companion_ppt.py --source-pdf "D:/path/source.pdf" --plan-json "D:/path/page-plan.json" --output-root "D:/path/output-root" --project-name "项目名" --sequence 01
+python scripts/build_companion_ppt.py --source-pdf "D:/path/source.pdf" --plan-json "D:/path/page-plan.json" --project-name "项目名" --sequence 01
 ```
+
+Use `--output-root "D:/path/output-root"` only when the user asks for a non-Desktop location.
 
 The builder internally calls `scripts/render_companion_ppt.py`. The low-level renderer is for template debugging or development work only.
 

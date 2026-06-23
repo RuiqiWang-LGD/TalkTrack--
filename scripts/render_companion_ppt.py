@@ -11,6 +11,7 @@ from typing import Any
 import fitz
 from PIL import Image
 from pptx import Presentation
+from pptx.enum.text import MSO_VERTICAL_ANCHOR
 from pptx.oxml.ns import qn
 
 
@@ -30,6 +31,7 @@ TEXT_SHAPES = {
     "next_step": "TextBox 20",
 }
 THUMBNAIL_SHAPE = "Picture 7"
+CONTENT_PANEL_SHAPE = "Rectangle 17"
 
 
 def parse_args() -> argparse.Namespace:
@@ -95,6 +97,16 @@ def set_text_preserve_style(shape, text: str) -> None:
     for paragraph in frame.paragraphs[1:]:
         for run in paragraph.runs:
             run.text = ""
+
+
+def center_script_box(slide) -> None:
+    """Keep the main read-aloud text visually centered in the right content panel."""
+    panel = find_shape(slide, CONTENT_PANEL_SHAPE)
+    script = find_shape(slide, TEXT_SHAPES["script"])
+    script.left = int(panel.left + (panel.width - script.width) / 2)
+    script.top = int(panel.top + (panel.height - script.height) / 2)
+    if hasattr(script, "text_frame"):
+        script.text_frame.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
 
 
 def duplicate_template_slide(prs: Presentation, source_slide, skip_picture_name: str):
@@ -178,6 +190,7 @@ def render(source_pdf: Path, plan_json: Path, template_pptx: Path, output_pptx: 
         delete_slide(prs, template_slide)
 
         for slide, item in zip(slides, page_plan):
+            center_script_box(slide)
             page_number = item["page"]
             set_text_preserve_style(find_shape(slide, TEXT_SHAPES["page"]), f"{page_number:02d}")
             set_text_preserve_style(find_shape(slide, TEXT_SHAPES["total"]), f"/ {total}")

@@ -32,7 +32,7 @@ def parse_args() -> argparse.Namespace:
         "--output-root",
         type=Path,
         default=None,
-        help="Folder where the project report folder will be created. Defaults to the source PDF folder.",
+        help="Folder where the project report folder will be created. Defaults to the current user's Desktop.",
     )
     parser.add_argument("--project-name", default=None, help="Override the project name inferred from the source file.")
     parser.add_argument("--sequence", default="01", help="Two-digit output sequence number. Defaults to 01.")
@@ -68,6 +68,11 @@ def normalize_sequence(value: str) -> str:
 def count_pdf_pages(path: Path) -> int:
     with fitz.open(str(path)) as doc:
         return doc.page_count
+
+
+def default_output_root() -> Path:
+    desktop = Path.home() / "Desktop"
+    return desktop if desktop.exists() else Path.home()
 
 
 def validate_inputs(source_pdf: Path, plan_json: Path, template_pptx: Path) -> None:
@@ -159,7 +164,7 @@ def main() -> None:
     args = parse_args()
     source_pdf = args.source_pdf
     project_name = args.project_name or infer_project_name(source_pdf)
-    output_root = args.output_root or source_pdf.parent
+    output_root = args.output_root or default_output_root()
 
     output = build_companion_ppt(
         source_pdf=source_pdf,
