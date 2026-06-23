@@ -1,0 +1,6 @@
+interface:
+  display_name: "顺页讲"
+  short_description: "把方案册变成可直接照读的 iPad 同步伴读 PPT"
+  default_prompt: "Use $design-report-companion / TalkTrack / 顺页讲 to turn this presentation into one clean project folder containing a page-synced iPad read-aloud companion PPT."
+policy:
+  allow_implicit_invocation: true
