@@ -1,4 +1,7 @@
 interface:
+  icon_small: "./assets/brand/icon.png"
+  icon_large: "./assets/brand/mark.svg"
+  brand_color: "#DB753E"
   display_name: "顺页讲 TalkTrack"
   short_description: "把方案册变成可直接照读的 iPad 同步伴读 PPT"
   default_prompt: "Use TalkTrack / 顺页讲 to turn this presentation into one clean project folder on Desktop containing a page-synced iPad read-aloud companion PPT."

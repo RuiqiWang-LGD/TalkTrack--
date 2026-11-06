@@ -1,210 +1,160 @@
-# 顺页讲 TalkTrack
+<p align="center">
+  <img src="assets/brand/mark.svg" alt="TalkTrack logo" height="112">
+</p>
 
-TalkTrack 的价值，是把“我有一份方案，但还没准备好怎么讲”，变成“我现在可以拿起来顺着讲”。
+<h1 align="center">TalkTrack</h1>
 
-## 1. 一句话定位
+<p align="center">
+  <strong>Turn visual proposals into page-synced presenter notes.</strong><br>
+  <sub>An AI skill for design, product and project presentations.</sub>
+</p>
 
-TalkTrack 是一个面向设计、产品、品牌、空间、策划和公共汇报场景的汇报辅助工具。 你把 PDF、PPT 导出文件或图片型方案册交给它，它会生成一份和原方案页码同步的 `01_项目名.pptx`。
+<p align="center"><strong>English</strong> | <a href="README_CN.md">简体中文</a></p>
 
-这份 PPT 不是投到大屏上的方案文件，而是汇报人手里 iPad 上看的伴读稿：
+<p align="center">
+  <img src="assets/brand/badge-1.svg" alt="type: AI Skill" height="22">
+  <img src="assets/brand/badge-2.svg" alt="output: PPTX" height="22">
+  <img src="assets/brand/badge-3.svg" alt="notes: Chinese" height="22">
+  <img src="assets/brand/badge-4.svg" alt="mode: Page-synced" height="22">
+</p>
 
-左侧保留原页缩略图和关键词，
+<p align="center">
+  Keep page thumbnails, keywords and Chinese read-aloud notes together.<br>
+  Follow pause and page-turn cues to present with a clear rhythm.
+</p>
 
-右侧是一段可以直接照着念的中文汇报正文，
+<p align="center"><a href="#quick-start"><strong>Quick Start</strong></a> · <a href="#how-it-works"><strong>How It Works</strong></a> · <a href="#installation"><strong>Installation</strong></a> · <a href="#limitations"><strong>Limitations</strong></a></p>
 
-底部给停顿、翻页、连续讲或设计师补充提示。
+---
 
-## 2. 为什么需要它
+## From visual proposals to a confident delivery
 
-很多方案不是没做完，而是没时间讲顺。
-
-设计师、策划、品牌团队、产品团队和项目负责人经常会遇到同一种情况：方案册里有大量效果图、图纸、案例页、概念页和应用页，但真正上台时，需要有人把这些页面串成一条能听懂的线索。
-
-TalkTrack 解决的就是这件事：
-
-| 真实问题 | 它能做什么 |
-| --- | --- |
-| 图很多，字很少 | 把视觉页面转成可讲述语言。 |
-| 下午、明天就要汇报 | 快速生成一份能放在 iPad 上照读的伴读 PPT。 |
-| 方案页逻辑容易断 | 补齐开场、章节过渡、重点页停顿和收尾表达。 |
-| 相似页面连续出现 | 提示哪些页要停，哪些页可以顺翻。 |
-| 材料、节点、工艺不敢乱讲 | 给表达框架和专业提示，不乱编真实项目细节。 |
-
-顺页讲的核心不是把 PDF 改写成设计说明，而是模拟一个真实汇报者在台上开口。它会在第一页先放慢节奏，让汇报自然开始；在概念和策略页主动梳理主线；到材料、节点、产品、包装、施工、应用和交付页时，只基于图面和文件可确认内容做专业辅助，不替项目负责人编造真实材料、预算、工艺、审批或最终选择。
-
-## 3. 快速开始
-
-你可以直接这样说：
-
-```text
-$顺页讲  帮我把这个方案册生成同步汇报伴读 PPT，语言稳妥，可以直接照着讲。
-```
-
-如果你知道汇报对象，也可以说得更具体：
-
-```text
-$顺页讲  这个文件要给甲方高层汇报，请用决策汇报型，突出价值、取舍、风险和下一步。
-```
-
-如果是专业评审：
-
-```text
-$顺页讲  这是一个设计评审文件，请用专业落地型，重点讲材料、节点、空间关系和落地逻辑。
-```
-
-## 4. 重要边界
-
-前期概念、逻辑、章节过渡和总结表达，Skill 可以承担更多工作；到了具体产品、材料、节点、工艺和交付成果时，它输出的是汇报提示和表达框架，不是最终专业定稿。
-
-原因很简单：AI 可以根据图面和文字推断表达逻辑，但它不一定可以准确真实的表达项目里的材料品牌、工艺参数、结构尺寸、施工原因、甲方意见和最终选型。
-
-所以结果交付落地页会遵守几个原则：
-
-- 不假装完全懂项目。
-- 不乱编材料品牌、参数、工艺、审批、甲方意见和最终选型。
-- 先用图面可见内容搭建表达框架。
-- 给设计师留下现场补充和修改空间。
-## 5. 下载后会得到什么
-
-当前用户可见输出只有一个文件夹和一个文件：
-
-```text
-桌面/
-└── 项目名汇报/
-    └── 01_项目名.pptx
-```
-
-默认会在桌面生成项目汇报文件夹；如果你希望放到其他位置，可以在生成前说明。
-
-文件名会默认从上传文件或标题页里提取项目名称，前面加两位编号，方便多项目测试、转发和后期整理。
-
-这份 PPT 会尽量做到：
-
-| 页面区域 | 内容 | 设计目的 |
+| Page alignment | Read-aloud notes | Speaking rhythm |
 | --- | --- | --- |
-| 左侧 | 页码、状态、原页缩略图、2-3 个关键词。 | 帮助汇报人确认当前讲哪一页，以及这一页的核心对象。 |
-| 右侧 | 大字号中文伴读正文。 | 提供台上可直接朗读的表达，不写内部说明。 |
-| 底部 | 停顿、翻页、连续讲、设计师补充提示。 | 控制汇报节奏，避免相似页面重复啰嗦。 |
+| Keep original thumbnails and keywords | Develop clear Chinese presenter copy | Add pause and page-turn cues |
+| Pages → Companion | Visuals → Spoken narrative | Sequence → Delivery cues |
 
-- 每一页与原方案页码同步，方便现场对照。
-- 页面里包含原页缩略图，避免讲稿和原文件脱节。
-- 每页给 2-3 个关键词，帮助快速抓重点。
-- 右侧提供一段中文汇报正文，优先写成“台上能直接念的话”。
-- 底部给翻页、停顿、连续讲或设计师补充提示，帮助控制汇报节奏。
-## 6. 适合谁使用
+---
 
-| 使用者 | 典型场景 | 使用价值 |
+<a id="quick-start"></a>
+
+## Quick Start
+
+Upload a PDF, exported presentation or image-based proposal, then describe your goal:
+
+~~~text
+Use TalkTrack to create a page-synced PPTX companion for this proposal, with clear Chinese read-aloud notes.
+~~~
+
+For a decision-making audience, ask for decision-briefing mode and a focus on value, choices, risks and next steps. For a professional review, ask for implementation mode and a focus on visible materials, spatial relationships and buildability.
+
+The public product name is **TalkTrack / 顺页讲**. The internal Codex skill ID is **design-report-companion**; it can be invoked as $design-report-companion.
+
+## What You Get
+
+TalkTrack creates a presenter-side companion, intended for reading on an iPad while the original proposal is projected. It helps when a visual deck is ready but the speaker has little preparation time.
+
+| Area | Content | Purpose |
 | --- | --- | --- |
-| 设计师 | 方案已经排完，但还没写逐页讲稿。 | 快速得到一版可读稿，再按真实项目微调。 |
-| 项目负责人 | 同时看多个项目，临时接手汇报。 | 先抓住项目逻辑和重点页，减少重新消化材料的时间。 |
-| 临时汇报人 | 替同事、团队或领导上台讲方案。 | 拿着 iPad 伴读文件，也能稳定完成基础汇报。 |
-| 老板 / 甲方 / 决策人 | 想快速理解视觉方案，不想逐页啃文件。 | 通过伴读稿快速判断概念、价值、风险和下一步。 |
-| 内容发布者 | 想把方案、案例或工具做成短视频解释。 | 把视觉材料转成更顺口、更有叙事感的口播语言。 |
+| Left | Original page thumbnail, page number and 2–3 keywords | Stay aligned with the projected page |
+| Right | A continuous paragraph of large Chinese read-aloud copy | Provide words that can be spoken directly |
+| Bottom | Pause, page-turn, continuous-reading or designer-input cues | Control the rhythm |
 
-## 7. 支持哪些文件
+Every companion page corresponds to the original page number. Current companion copy is **Chinese**; an English README does not imply English narration support.
 
-| 可以上传 | 适用情况 |
-| --- | --- |
-| PDF | 方案册、汇报册、评审文件、设计文本。 |
-| PPT 或 PPT 导出文件 | 已经排好页面，但缺少现场讲述稿。 |
-| 单页或多页图片 | 效果图、分析图、平面图、材料图、节点图、案例图。 |
+The usual delivery is one folder and one PPTX:
 
-只要文件满足三个特征，就很适合使用：
+~~~text
+Desktop/
+└─ 项目名汇报/
+   └─ 01_项目名.pptx
+~~~
 
-- 图很多，文字少。
-- 需要有人对着屏幕讲。
-- 希望快速得到一份能上台念、能顺着讲、能辅助发挥的伴读稿。
-## 8. 四种语言模式
+The name is taken from the source or title page where possible. A different output location can be specified.
 
-| 模式 | 适合场景 | 语言特点 |
+## Who It Helps
+
+Designers with a finished proposal but no speaking notes; project leads taking over a presentation; substitute presenters; teams explaining visual proposals to clients and reviewers; and creators developing a spoken narrative from visual project material.
+
+## Inputs and Speaking Modes
+
+Source material can be PDF, exported presentation pages or single/multiple images such as renderings, plans, diagrams, details and references.
+
+| Mode | Typical use | Style |
 | --- | --- | --- |
-| 直读稳妥型 | 默认模式；临时汇报；没时间准备。 | 安全、顺口、不乱编细节，专业但不过度包装。 |
-| 专业落地型 | 设计评审；材料、节点、结构、产品和应用页。 | 多讲对象、做法、效果，少讲空概念。 |
-| 价值叙事型 | 提案、品牌汇报、文旅策划、短视频展示。 | 更强调故事线、情绪、记忆点和场景价值。 |
-| 决策汇报型 | 老板、甲方高层、政府汇报、多方案比选。 | 少讲细节，多讲问题、回应、价值、风险和下一步。 |
+| Direct and steady | Default; limited preparation; substitute speaker | Clear and natural, cautious about unsupported detail |
+| Professional implementation | Reviews, materials, details and application pages | Specific about visible objects and confirmed relationships |
+| Value narrative | Proposals, branding and cultural/tourism concepts | More story, value, rhythm and memorable ideas |
+| Decision briefing | Leadership/client reviews, public presentations, comparisons | Problems, choices, value, risks and next steps |
 
-如果你不指定模式，默认按“直读稳妥型”处理；遇到材料、节点、产品、应用和交付成果页时，会自动向“专业落地型”靠近。
+Without an explicit choice, the default is direct and steady. Implementation pages move toward the professional style. Before generation, the skill recommends a language direction the user can adjust.
 
-正式生成前，Skill 会先给出一个推荐语言方向，并补一句可调整建议。你觉得太稳、太专业或太平，都可以在确认前要求改成更有情绪、更专业、更直读或更偏决策汇报。
+<a id="how-it-works"></a>
 
-## 9. 跨专业使用逻辑
+## How It Works
 
-不同专业的词不一样，但汇报结构类似：先让人理解为什么，再让人看到怎么做，最后让人知道价值和下一步。
+1. Start calmly: name the project and scope before making strong conclusions.
+2. Identify the discipline and the main presentation task.
+3. Recognize page roles without forcing every deck into a fixed chapter structure.
+4. Keep useful source concepts and turn them into natural spoken language.
+5. Ground implementation pages in visible or documented facts.
+6. Control repetition across similar pages with pause and page-turn cues.
+7. Apply the companion template, verify page counts and generate the final PPTX.
 
-| 专业方向 | 重点识别内容 |
+After receiving a file, the skill briefly confirms the output, language direction, narrative approach and factual boundaries before full generation. Naming, folder creation, template application and basic checks are automated. Page-level language, rhythm and professional judgment remain model work.
+
+### Cross-disciplinary use
+
+| Field | Possible emphasis |
 | --- | --- |
-| 景观 / 建筑 / 室内 | 空间序列、动线组织、功能分区、材料界面、节点关系、灯光、植物、家具、结构和运营场景。 |
-| 品牌 / Logo / VI / 包装 | 品牌语义、图形来源、字体系统、色彩策略、版式关系、应用触点和识别一致性。 |
-| 工业产品 | 使用场景、用户痛点、结构、外观、材质、工艺、交互、参数和维护。 |
-| 雕塑 / 公共艺术 | 场地关系、观看路径、尺度、材料、结构、加工工艺和公共互动方式。 |
-| 文旅 / 策划 / 公共汇报 | 目标人群、资源基础、主题提炼、线路组织、运营场景、分期实施和决策价值。 |
+| Landscape, architecture, interiors | Spatial sequence, circulation, zoning, materials, details, lighting and operation |
+| Branding, visual identity, packaging | Meaning, graphic origin, type, color, layout and touchpoint consistency |
+| Industrial products | Users, pain points, structure, appearance, materials, interaction and maintenance |
+| Sculpture and public art | Site, viewing paths, scale, fabrication and public interaction |
+| Cultural/tourism and public projects | Audiences, resources, themes, routes, operation, phasing and decisions |
 
-## 10. 它怎么处理方案
+<a id="installation"></a>
 
-顺页讲不会把所有文件强行套进固定章节。正式生成前，它会先判断这份文件到底要讲什么、应该怎么讲、用什么内容来论证、策略或组织逻辑在哪里、具体交付 / 产品 / 成果怎么解释，以及最后是否需要收束升华。
+## Installation
 
-这个判断顺序更像一个汇报者的思考框架：
+1. Download the complete repository with **Code → Download ZIP** and extract it.
+2. Ask Codex to inspect the folder, identify your existing skills directory and install the package.
+3. For manual installation, copy the folder containing SKILL.md there as **design-report-companion**.
+4. Keep the template, preview, references and scripts with the skill.
+5. Restart Codex or open a new chat if needed, then invoke TalkTrack / 顺页讲.
 
-1. 处理第一页节奏：先软启动，说明项目和汇报范围，不急着把结论、材料和证明链全部压到第一页。
-1. 识别专业类型：空间类、品牌类、产品类、公共艺术类、策划类或公共汇报类。
-1. 判断主线任务：这份文件是要讲概念、讲方案、讲产品、讲成果、讲决策，还是讲一个完整过程。
-1. 拆分页面角色：前情、概念、策略、方案、应用、交付、对比和收尾按文件内容出现，不强行补齐。
-1. 处理概念表达：如果原文件里的概念词已经写得好，会优先保留，再改成更顺口的汇报话。
-1. 处理具体交付：材料、节点、产品、包装、应用、施工、行动结果等页面，以画面可见和文件可确认的客观内容为主，给汇报者留下专业补充空间。
-1. 控制连续页面：相似页面不重复硬讲，会提示哪些页停顿，哪些页可以顺翻。
-1. 自动生成伴读 PPT：Skill 会自动套用固定模板、检查页数、默认在桌面建立项目文件夹，并最终只给用户一个 `01_项目名.pptx`。
-## 11. 下载与安装
+Use the existing configured skills directory and avoid duplicates.
 
-1. 建议直接在 Codex 对话框输入解压后的文件夹路径，让 Codex 帮助确认安装位置并完成安装。
-2. 打开本仓库页面。
-3. 点击右上角 Code。
-4. 选择 Download ZIP。
-5. 解压后得到完整的 TalkTrack / 顺页讲 Skill 文件夹。
-6. 把解压出来的 Skill 文件夹放到本机 Codex 的 skills 目录。
-7. 重启 Codex 或新开线程。
-## 12. 在 Codex 中调用
+## What's Inside
 
-每次收到新文件后，Skill 会先做简短确认，说明输出文件、语言方向、这份文件大概会按什么主线处理，以及具体交付内容的表达边界。确认里也会补一句可调整建议，你确认后，它再开始正式生成。
+| Item | Purpose |
+| --- | --- |
+| [SKILL.md](SKILL.md) | Entry point and speaking standard |
+| [agents/openai.yaml](agents/openai.yaml) | Skill display information |
+| [assets/brand/](assets/brand/) | Logo and icon assets |
+| [assets/shunyejiang-template.pptx](assets/shunyejiang-template.pptx) | Companion template |
+| [assets/template-preview.jpg](assets/template-preview.jpg) | Template preview |
+| [references/](references/) | Writing, tone, planning and automation guidance |
+| [scripts/](scripts/) | Generation, rendering and page-plan validation |
 
-这个确认步骤是为了节约 token，也避免一上来生成很长的伴读 PPT 后，才发现语言模式、汇报对象或输出方向没对齐。
+Main helpers: build_companion_ppt.py, render_companion_ppt.py, render_companion_pdf.py and validate_page_plan.py.
 
-标准流程：
+<a id="limitations"></a>
 
-1. 上传 PDF、PPT 导出文件或图片型方案册。
-1. 补充项目类型、汇报对象、预计时长或语言风格。
-1. 确认生成方向。
-1. 得到桌面上的 `项目名汇报/01_项目名.pptx`。
+## Limitations
 
-正式生成时，Skill 会把命名、建文件夹、套模板、基础校验和 PPT 输出交给自动化脚本处理；逐页文案、概念保留、连续页节奏和专业边界判断仍由模型完成。
+Concept framing, transitions and summaries can be developed from the source. Specific materials, brands, dimensions, processes, budgets, approvals, client opinions and final decisions must be visible or documented before being stated as project facts.
 
-## 13. 文件结构
+Implementation pages provide a speaking framework and professional prompts, leaving room for the designer's project knowledge. The companion does not replace professional review or final project wording.
 
-```text
-TalkTrack/
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── assets/
-│   ├── template-preview.jpg
-│   └── shunyejiang-template.pptx
-├── references/
-│   ├── writing-rules.md
-│   ├── tone-modes.md
-│   ├── page-plan-patterns.md
-│   ├── implementation-language.md
-│   ├── automation.md
-│   └── github-publishing.md
-└── scripts/
-    ├── build_companion_ppt.py
-    ├── render_companion_ppt.py
-    ├── render_companion_pdf.py
-    └── validate_page_plan.py
-```
+## Updates and Feedback
 
-## 14. 后续更新与反馈
+Development focuses on discipline-specific expression, reliable template output and useful presentation styles. Feedback on unclear materials, details, parameters, costs or decisions informs the relevant rules.
 
-顺页讲会继续围绕真实汇报场景迭代，重点优化三个方向：更多专业类型的表达适配、更稳定的 PPT 模板输出，以及更适合短视频展示和客户沟通的语言模式。
+This branding/documentation update preserves the existing behavior, templates and generation scripts.
 
-如果你在使用时发现某一类页面讲得不够准，例如材料、节点、产品参数、预算、工艺、政策术语或真实决策背景，可以在生成前补充说明，也可以在生成后把问题页面反馈出来。后续版本会优先把这些真实问题沉淀成更稳的规则，而不是把所有专业细节都硬写死。
+## About
 
-建议每次更新 Skill 时，直接替换完整文件夹，并重新开启 Codex 线程后再调用 `$顺页讲`。
+TalkTrack turns a visual proposal into a page-synced companion the speaker can follow.
+
+[简体中文 documentation](README_CN.md) · [Map2Model](https://github.com/RuiqiWang-LGD/Map2Model) · [Insight-Space](https://github.com/RuiqiWang-LGD/Insight-Space)
